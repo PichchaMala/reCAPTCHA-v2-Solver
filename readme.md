@@ -5,7 +5,9 @@ A Python + Selenium project for automate reCAPTCHA v2 in a controlled browser en
 ## https://t.me/FameTechLK/186
 
 `git clone https://github.com/PichchaMala/reCAPTCHA-v2-Solver.git`
+<br>
 `cd reCAPTCHA-v2-Solver`
+<br>
 `pip install -r requirements.txt`
 <br>
 `python solve.py`
