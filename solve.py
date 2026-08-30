@@ -156,6 +156,7 @@ def download_chrome(dest_dir: str = "cft_bundle", force: bool = False):
     print(f"[download_chrome] Chrome binary: {chrome_bin}")
     print(f"[download_chrome] Chromedriver binary: {driver_bin}")
     return chrome_bin, driver_bin
+    
 
 def build_driver(crx_path: str, extract_dir: str = "unpacked_extension",
                   headless: bool = False, user_data_dir: str = None,
@@ -260,9 +261,7 @@ def test_recaptcha_v2(url):
         """)
 
         print("reCAPTCHA completed successfully.")
-        print("\nToken:")
-        print(token)
-        driver.quit()
+        return token
 
     except Exception as e:
         print(f"\nError: {e}")
@@ -270,6 +269,7 @@ def test_recaptcha_v2(url):
 
     finally:
         driver.quit()
+
 
 
 if __name__ == "__main__":
@@ -288,7 +288,8 @@ if __name__ == "__main__":
         
         url = ("https://www.google.com/recaptcha/api2/demo")
 
-        test_recaptcha_v2(url)
+        token = test_recaptcha_v2(url)
+        print(f"\nToken:\n{token}")
         time.sleep(3)
 
     finally:
